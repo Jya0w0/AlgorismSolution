@@ -219,9 +219,9 @@ using System.Numerics;
     {
         long[] answer = new long[n];
         {
-            for (int i = 0; i <= n; i++)
+            for (int i = 0; i < n; i++)
             {
-                answer[i] = x * (i + 1);
+                answer[i] = (long) x * (i + 1); // int로 계산하면 범위 때문에 오버플로
             }
         }
         return answer;
