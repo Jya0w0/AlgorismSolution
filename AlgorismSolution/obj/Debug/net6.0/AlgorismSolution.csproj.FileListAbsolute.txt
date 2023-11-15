@@ -1,0 +1,14 @@
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\bin\Debug\net6.0\AlgorismSolution.exe
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\bin\Debug\net6.0\AlgorismSolution.deps.json
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\bin\Debug\net6.0\AlgorismSolution.runtimeconfig.json
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\bin\Debug\net6.0\AlgorismSolution.dll
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\bin\Debug\net6.0\AlgorismSolution.pdb
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\obj\Debug\net6.0\AlgorismSolution.GeneratedMSBuildEditorConfig.editorconfig
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\obj\Debug\net6.0\AlgorismSolution.AssemblyInfoInputs.cache
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\obj\Debug\net6.0\AlgorismSolution.AssemblyInfo.cs
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\obj\Debug\net6.0\AlgorismSolution.csproj.CoreCompileInputs.cache
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\obj\Debug\net6.0\AlgorismSolution.dll
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\obj\Debug\net6.0\refint\AlgorismSolution.dll
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\obj\Debug\net6.0\AlgorismSolution.pdb
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\obj\Debug\net6.0\AlgorismSolution.genruntimeconfig.cache
+D:\Coding\C#\AlgorismSolution\AlgorismSolution\obj\Debug\net6.0\ref\AlgorismSolution.dll
