@@ -215,15 +215,58 @@ using System.Numerics;
 
 // Solution16 x만큼 간격이 있는 n개의 숫자
 {
-    long[] solution(int x, int n)
-    {
-        long[] answer = new long[n];
-        {
-            for (int i = 0; i < n; i++)
-            {
-                answer[i] = (long) x * (i + 1); // int로 계산하면 범위 때문에 오버플로
-            }
-        }
-        return answer;
-    }
+    //long[] solution(int x, int n)
+    //{
+    //    long[] answer = new long[n];
+    //    {
+    //        for (int i = 0; i < n; i++)
+    //        {
+    //            answer[i] = (long) x * (i + 1); // int로 계산하면 범위 때문에 오버플로
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// Solution17 자연수 뒤집어 배열로 만들기
+{
+    //int[] solution(long n)
+    //{
+    //    string s = n.ToString();
+    //    int[] answer = new int[s.Length];
+    //    {
+    //        for (int i = s.Length - 1; i >= 0; i--)
+    //        {
+    //            answer[s.Length - i - 1] = s[i] - '0';
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// Solution18 문자열을 정수로 바꾸기
+{
+    //int solution(string s)
+    //{
+    //    int answer = int.Parse(s);
+    //    return answer;
+    //}
+}
+
+// Solution19 정수 제곱근 판별
+{
+    //long solution(long n)
+    //{
+    //    long i = (long)Math.Sqrt(n);
+    //    long answer = 0;
+    //    if (Math.Pow(i, 2) == n)
+    //    {
+    //        answer = (long)Math.Pow(i + 1, 2);
+    //    }
+    //    else
+    //    {
+    //        answer = -1;
+    //    }
+    //    return answer;
+    //}
 }
