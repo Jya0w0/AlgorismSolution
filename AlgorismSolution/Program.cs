@@ -1,5 +1,6 @@
-﻿// Solution1 두 수의 차
+﻿using System.Linq;
 using System.Numerics;
+// Solution1 두 수의 차
 {
     //int solution(int num1, int num2)
     //{
@@ -269,4 +270,32 @@ using System.Numerics;
     //    }
     //    return answer;
     //}
+}
+
+// Solution20 정수 내림차순으로 배치하기
+{
+    //long solution(long n)
+    //{
+    //    char[] c = n.ToString().ToCharArray();
+    //    Array.Sort(c);
+    //    long answer = 0;
+    //    Array.Reverse(c);
+    //    string s = "";
+    //    for (long i = 0; i < c.Length; i++)
+    //    {
+    //        s += c[i];
+    //    }
+    //    answer = long.Parse(s);
+    //    return answer;
+    //}
+}
+// 20 축약버전
+{
+    long solution(long n)
+    {
+        char[] c = n.ToString().ToCharArray();
+        Array.Sort(c);
+        Array.Reverse(c);
+        return long.Parse(c);
+    }
 }
