@@ -291,11 +291,26 @@ using System.Numerics;
 }
 // 20 축약버전
 {
-    long solution(long n)
+    //long solution(long n)
+    //{
+    //    char[] c = n.ToString().ToCharArray();
+    //    Array.Sort(c);
+    //    Array.Reverse(c);
+    //    return long.Parse(c);
+    //}
+}
+
+// Solution21 하샤드 수
+{
+    bool solution(int x)
     {
-        char[] c = n.ToString().ToCharArray();
-        Array.Sort(c);
-        Array.Reverse(c);
-        return long.Parse(c);
+        char[] c = x.ToString().ToCharArray();
+        int sum = 0;
+        for (int i = 0; i < c.Length; i++)
+        {
+            sum += int.Parse(c[i].ToString());
+        }
+        bool answer = x % sum == 0 ? true : false;
+        return answer;
     }
 }
