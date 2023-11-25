@@ -302,15 +302,101 @@ using System.Numerics;
 
 // Solution21 하샤드 수
 {
-    bool solution(int x)
+    //bool solution(int x)
+    //{
+    //    char[] c = x.ToString().ToCharArray();
+    //    int sum = 0;
+    //    for (int i = 0; i < c.Length; i++)
+    //    {
+    //        sum += int.Parse(c[i].ToString());
+    //    }
+    //    bool answer = x % sum == 0 ? true : false;
+    //    return answer;
+    //}
+}
+
+// Solution22 두 정수 사이의 합
+{
+    //long solution(int a, int b)
+    //{
+    //    long answer = 0;
+    //    if (a < b)
+    //    {
+    //        for (int i = a; i <= b; i++)
+    //        {
+    //            answer += i;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        for (int i = b; i <= a; i++)
+    //        {
+    //            answer += i;
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// 22 축약버전
+{
+    //long solution(int a, int b)
+    //{
+    //    long answer = 0;
+    //    while (a != b)
+    //    {
+    //        answer += a;
+    //        a = (a < b) ? a + 1 : a - 1;
+    //    }
+    //    return answer + b;
+    //}
+}
+
+// Solution 23 콜라츠 추측
+{
+    //int solution(int num)
+    //{
+    //    int answer = 0;
+    //    long a = num;
+    //    while (true)
+    //    {
+    //        if (a == 1)
+    //        {
+    //            break;
+    //        }
+    //        else if (answer >= 500)
+    //        {
+    //            answer = -1;
+    //            break;
+    //        }
+    //        else
+    //        {
+    //            a = a % 2 == 0 ? a / 2 : a * 3 + 1;
+    //            answer++;
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// 23 다른버전
+{
+    int solution(int num)
     {
-        char[] c = x.ToString().ToCharArray();
-        int sum = 0;
-        for (int i = 0; i < c.Length; i++)
+        int answer = -1;
+        long a = num;
+        for (int i = 0; i < 500; i++)
         {
-            sum += int.Parse(c[i].ToString());
+            if (a == 1)
+            {
+                answer = i;
+                break;
+            }
+            else
+            {
+                a = a % 2 == 0 ? a / 2 : a * 3 + 1;
+            }
         }
-        bool answer = x % sum == 0 ? true : false;
         return answer;
     }
 }
