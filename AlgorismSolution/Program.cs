@@ -381,22 +381,32 @@ using System.Numerics;
 
 // 23 다른버전
 {
-    int solution(int num)
+    //int solution(int num)
+    //{
+    //    int answer = -1;
+    //    long a = num;
+    //    for (int i = 0; i < 500; i++)
+    //    {
+    //        if (a == 1)
+    //        {
+    //            answer = i;
+    //            break;
+    //        }
+    //        else
+    //        {
+    //            a = a % 2 == 0 ? a / 2 : a * 3 + 1;
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// 24 서울에서 김서방 찾기
+{
+    string solution(string[] seoul)
     {
-        int answer = -1;
-        long a = num;
-        for (int i = 0; i < 500; i++)
-        {
-            if (a == 1)
-            {
-                answer = i;
-                break;
-            }
-            else
-            {
-                a = a % 2 == 0 ? a / 2 : a * 3 + 1;
-            }
-        }
-        return answer;
+        string answer = "";
+        int x = Array.IndexOf(seoul, "Kim");
+        return answer = $"김서방은 {x}에 있다";
     }
 }
