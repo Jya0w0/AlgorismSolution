@@ -403,10 +403,32 @@ using System.Numerics;
 
 // 24 서울에서 김서방 찾기
 {
-    string solution(string[] seoul)
+    //string solution(string[] seoul)
+    //{
+    //    string answer = "";
+    //    int x = Array.IndexOf(seoul, "Kim");
+    //    return answer = $"김서방은 {x}에 있다";
+    //}
+}
+
+// 나누어 떨어지는 숫자 배열
+{
+    int[] solution(int[] arr, int divisor)
     {
-        string answer = "";
-        int x = Array.IndexOf(seoul, "Kim");
-        return answer = $"김서방은 {x}에 있다";
+        List<int> result = new List<int>();
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] % divisor == 0)
+            {
+                result.Add(arr[i]);
+            }
+        }
+        if (result.Count == 0)
+        {
+            return new int[] { -1 };
+        }
+        int[] answer = result.ToArray();
+        Array.Sort(answer);
+        return answer;
     }
 }
