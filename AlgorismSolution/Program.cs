@@ -411,24 +411,50 @@ using System.Numerics;
     //}
 }
 
-// 나누어 떨어지는 숫자 배열
+// 25 나누어 떨어지는 숫자 배열
 {
-    int[] solution(int[] arr, int divisor)
+    //int[] solution(int[] arr, int divisor)
+    //{
+    //    List<int> result = new List<int>();
+    //    for (int i = 0; i < arr.Length; i++)
+    //    {
+    //        if (arr[i] % divisor == 0)
+    //        {
+    //            result.Add(arr[i]);
+    //        }
+    //    }
+    //    if (result.Count == 0)
+    //    {
+    //        return new int[] { -1 };
+    //    }
+    //    int[] answer = result.ToArray();
+    //    Array.Sort(answer);
+    //    return answer;
+    //}
+}
+
+// 26 음양 더하기
+{
+    //int solution(int[] absolutes, bool[] signs)
+    //{
+    //    int answer = 0;
+    //    for (int i = 0; i < absolutes.Length; i++)
+    //    {
+    //        answer += signs[i] == true ? absolutes[i] : -absolutes[i];
+    //    }
+    //    return answer;
+    //}
+}
+
+// 27 핸드폰 번호 가리기
+{
+    string solution(string phone_number)
     {
-        List<int> result = new List<int>();
-        for (int i = 0; i < arr.Length; i++)
+        string answer = phone_number.Substring(phone_number.Length - 4, 4);
+        for (int i = 0; i < phone_number.Length - 4; i++)
         {
-            if (arr[i] % divisor == 0)
-            {
-                result.Add(arr[i]);
-            }
+            answer = answer.Insert(i, "*");
         }
-        if (result.Count == 0)
-        {
-            return new int[] { -1 };
-        }
-        int[] answer = result.ToArray();
-        Array.Sort(answer);
         return answer;
     }
 }
