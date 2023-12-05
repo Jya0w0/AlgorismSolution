@@ -448,13 +448,48 @@ using System.Numerics;
 
 // 27 핸드폰 번호 가리기
 {
-    string solution(string phone_number)
+    //string solution(string phone_number)
+    //{
+    //    string answer = phone_number.Substring(phone_number.Length - 4, 4);
+    //    for (int i = 0; i < phone_number.Length - 4; i++)
+    //    {
+    //        answer = answer.Insert(i, "*");
+    //    }
+    //    return answer;
+    //}
+}
+
+// 28 없는 숫자 더하기
+{
+    //int solution(int[] numbers)
+    //{
+    //    int answer = 0;
+    //    for (int i = 0; i <= 9; i++)
+    //    {
+    //        answer += i;
+    //    }
+    //    return answer -= numbers.Sum();
+    //}
+}
+
+// 29 제일 작은 수 제거하기
+{
+    int[] solution(int[] arr)
     {
-        string answer = phone_number.Substring(phone_number.Length - 4, 4);
-        for (int i = 0; i < phone_number.Length - 4; i++)
+        int[] answer = new int[] { };
+        if (arr.Length == 1) { arr[0] = -1; return arr; }
+        int min = arr[0];
+        for (int i = 0; i < arr.Length; i++)
         {
-            answer = answer.Insert(i, "*");
+            if (min > arr[i])
+            {
+                min = arr[i];
+            }
         }
+        List<int> list = new List<int>();
+        list.AddRange(arr);
+        list.Remove(min);
+        answer = list.ToArray();
         return answer;
     }
 }
