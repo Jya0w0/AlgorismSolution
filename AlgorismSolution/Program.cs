@@ -474,22 +474,46 @@ using System.Numerics;
 
 // 29 제일 작은 수 제거하기
 {
-    int[] solution(int[] arr)
+//    int[] solution(int[] arr)
+//    {
+//        int[] answer = new int[] { };
+//        if (arr.Length == 1) { arr[0] = -1; return arr; }
+//        int min = arr[0];
+//        for (int i = 0; i < arr.Length; i++)
+//        {
+//            if (min > arr[i])
+//            {
+//                min = arr[i];
+//            }
+//        }
+//        List<int> list = new List<int>();
+//        list.AddRange(arr);
+//        list.Remove(min);
+//        answer = list.ToArray();
+//        return answer;
+//    }
+}
+
+// 30 가운데 글자 가져오기
+{
+    //string solution(string s)
+    //{
+    //    string answer = "";
+    //    int i = s.Length / 2;
+    //    answer = s.Length % 2 == 0 ? s.Substring(i - 1, 2) : s.Substring(i, 1);
+    //    return answer;
+    //}
+}
+
+// 31 수박수박수박수박수박수?
+{
+    string solution(int n)
     {
-        int[] answer = new int[] { };
-        if (arr.Length == 1) { arr[0] = -1; return arr; }
-        int min = arr[0];
-        for (int i = 0; i < arr.Length; i++)
+        string answer = "";
+        for (int i = 1; i <= n; i++)
         {
-            if (min > arr[i])
-            {
-                min = arr[i];
-            }
+            answer += i % 2 == 0 ? "박" : "수";
         }
-        List<int> list = new List<int>();
-        list.AddRange(arr);
-        list.Remove(min);
-        answer = list.ToArray();
         return answer;
     }
 }
