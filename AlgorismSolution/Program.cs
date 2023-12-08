@@ -507,12 +507,46 @@ using System.Numerics;
 
 // 31 수박수박수박수박수박수?
 {
-    string solution(int n)
+    //string solution(int n)
+    //{
+    //    string answer = "";
+    //    for (int i = 1; i <= n; i++)
+    //    {
+    //        answer += i % 2 == 0 ? "박" : "수";
+    //    }
+    //    return answer;
+    //}
+}
+
+// 32 내적
+{
+    //int solution(int[] a, int[] b)
+    //{
+    //    int answer = 0;
+    //    for (int i = 0; i < a.Length; i++)
+    //    {
+    //        answer += a[i] * b[i];
+    //    }
+    //    return answer;
+    //}
+}
+
+// 33 약수의 개수와 덧셈
+{
+    int solution(int left, int right)
     {
-        string answer = "";
-        for (int i = 1; i <= n; i++)
+        int answer = 0;
+        for (int i = left; i <= right; i++)
         {
-            answer += i % 2 == 0 ? "박" : "수";
+            int count = 0;
+            for (int j = 1; j <= i; j++)
+            {
+                if (i % j == 0)
+                {
+                    count++;
+                }
+            }
+            answer = count % 2 == 0 ? answer += i : answer -= i;
         }
         return answer;
     }
