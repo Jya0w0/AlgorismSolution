@@ -533,21 +533,34 @@ using System.Numerics;
 
 // 33 약수의 개수와 덧셈
 {
-    int solution(int left, int right)
+    //int solution(int left, int right)
+    //{
+    //    int answer = 0;
+    //    for (int i = left; i <= right; i++)
+    //    {
+    //        int count = 0;
+    //        for (int j = 1; j <= i; j++)
+    //        {
+    //            if (i % j == 0)
+    //            {
+    //                count++;
+    //            }
+    //        }
+    //        answer = count % 2 == 0 ? answer += i : answer -= i;
+    //    }
+    //    return answer;
+    //}
+}
+
+// 34 문자열 내림차순으로 배치하기
+{
+    string solution(string s)
     {
-        int answer = 0;
-        for (int i = left; i <= right; i++)
-        {
-            int count = 0;
-            for (int j = 1; j <= i; j++)
-            {
-                if (i % j == 0)
-                {
-                    count++;
-                }
-            }
-            answer = count % 2 == 0 ? answer += i : answer -= i;
-        }
+        string answer = "";
+        char[] arr = s.ToCharArray();
+        Array.Sort(arr);
+        Array.Reverse(arr);
+        answer = new string(arr);
         return answer;
     }
 }
