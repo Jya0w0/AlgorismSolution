@@ -554,13 +554,27 @@ using System.Numerics;
 
 // 34 문자열 내림차순으로 배치하기
 {
-    string solution(string s)
+    //string solution(string s)
+    //{
+    //    string answer = "";
+    //    char[] arr = s.ToCharArray();
+    //    Array.Sort(arr);
+    //    Array.Reverse(arr);
+    //    answer = new string(arr);
+    //    return answer;
+    //}
+}
+
+// 35 부족한 금액 계산하기
+{
+    long solution(int price, int money, int count)
     {
-        string answer = "";
-        char[] arr = s.ToCharArray();
-        Array.Sort(arr);
-        Array.Reverse(arr);
-        answer = new string(arr);
-        return answer;
+        long sum = money;
+        for (int i = 1; i <= count; i++)
+        {
+            sum -= (long)price * i;
+        }
+        long result = sum < 0 ? sum * -1 : 0;
+        return result;
     }
 }
