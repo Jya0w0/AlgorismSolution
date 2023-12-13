@@ -567,14 +567,24 @@ using System.Numerics;
 
 // 35 부족한 금액 계산하기
 {
-    long solution(int price, int money, int count)
+    //long solution(int price, int money, int count)
+    //{
+    //    long sum = money;
+    //    for (int i = 1; i <= count; i++)
+    //    {
+    //        sum -= (long)price * i;
+    //    }
+    //    long result = sum < 0 ? sum * -1 : 0;
+    //    return result;
+    //}
+}
+
+// 36 문자열 다루기 기본
+{
+    bool solution(string s)
     {
-        long sum = money;
-        for (int i = 1; i <= count; i++)
-        {
-            sum -= (long)price * i;
-        }
-        long result = sum < 0 ? sum * -1 : 0;
-        return result;
+        bool answer = true;
+        answer = s.Length == 4 || s.Length == 6 ? int.TryParse(s, out int num) : false;
+        return answer;
     }
 }
