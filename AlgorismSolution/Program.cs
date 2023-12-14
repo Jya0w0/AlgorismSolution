@@ -581,10 +581,28 @@ using System.Numerics;
 
 // 36 문자열 다루기 기본
 {
-    bool solution(string s)
+    //bool solution(string s)
+    //{
+    //    bool answer = true;
+    //    answer = s.Length == 4 || s.Length == 6 ? int.TryParse(s, out int num) : false;
+    //    return answer;
+    //}
+}
+
+// 37 행렬의 덧셈
+{
+    int[,] solution(int[,] arr1, int[,] arr2)
     {
-        bool answer = true;
-        answer = s.Length == 4 || s.Length == 6 ? int.TryParse(s, out int num) : false;
+        int row = arr1.GetLength(0);
+        int col = arr1.GetLength(1);
+        int[,] answer = new int[row, col];
+        for (int i = 0; i < row; i++)
+        {
+            for (int j = 0; j < col; j++)
+            {
+                answer[i, j] = arr1[i, j] + arr2[i, j];
+            }
+        }
         return answer;
     }
 }
