@@ -591,18 +591,42 @@ using System.Numerics;
 
 // 37 행렬의 덧셈
 {
-    int[,] solution(int[,] arr1, int[,] arr2)
+    //int[,] solution(int[,] arr1, int[,] arr2)
+    //{
+    //    int row = arr1.GetLength(0);
+    //    int col = arr1.GetLength(1);
+    //    int[,] answer = new int[row, col];
+    //    for (int i = 0; i < row; i++)
+    //    {
+    //        for (int j = 0; j < col; j++)
+    //        {
+    //            answer[i, j] = arr1[i, j] + arr2[i, j];
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// 38 직사각형 별찍기
+    public class Example
+{
+    public static void Main()
     {
-        int row = arr1.GetLength(0);
-        int col = arr1.GetLength(1);
-        int[,] answer = new int[row, col];
-        for (int i = 0; i < row; i++)
+        String[] s;
+
+        Console.Clear();
+        s = Console.ReadLine().Split(' ');
+
+        int a = Int32.Parse(s[0]);
+        int b = Int32.Parse(s[1]);
+
+        for (int i = 0; i < b; i++)
         {
-            for (int j = 0; j < col; j++)
+            for (int j = 0; j < a; j++)
             {
-                answer[i, j] = arr1[i, j] + arr2[i, j];
+                Console.Write("*");
             }
+            Console.WriteLine();
         }
-        return answer;
     }
 }
