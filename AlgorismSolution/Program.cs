@@ -608,25 +608,46 @@ using System.Numerics;
 }
 
 // 38 직사각형 별찍기
-    public class Example
+//    public class Example
+//{
+//    public static void Main()
+//    {
+//        String[] s;
+
+//        Console.Clear();
+//        s = Console.ReadLine().Split(' ');
+
+//        int a = Int32.Parse(s[0]);
+//        int b = Int32.Parse(s[1]);
+
+//        for (int i = 0; i < b; i++)
+//        {
+//            for (int j = 0; j < a; j++)
+//            {
+//                Console.Write("*");
+//            }
+//            Console.WriteLine();
+//        }
+//    }
+//}
+
+// 최대공약수와 최소공배수
 {
-    public static void Main()
+    int[] solution(int n, int m)
     {
-        String[] s;
-
-        Console.Clear();
-        s = Console.ReadLine().Split(' ');
-
-        int a = Int32.Parse(s[0]);
-        int b = Int32.Parse(s[1]);
-
-        for (int i = 0; i < b; i++)
+        int[] answer = new int[2];
+        int OriginN = n;
+        int OriginM = m;
+        int gcd = 0;
+        while (m > 0)
         {
-            for (int j = 0; j < a; j++)
-            {
-                Console.Write("*");
-            }
-            Console.WriteLine();
+            int temp = n;
+            n = m;
+            m = temp % m;
+            gcd = n;
         }
+        answer[0] = gcd;
+        answer[1] = OriginN * OriginM / gcd;
+        return answer;
     }
 }
