@@ -631,23 +631,59 @@ using System.Numerics;
 //    }
 //}
 
-// 최대공약수와 최소공배수
+// 39 최대공약수와 최소공배수 ---------
 {
-    int[] solution(int n, int m)
+    //int[] solution(int n, int m)
+    //{
+    //    int[] answer = new int[2];
+    //    int OriginN = n;
+    //    int OriginM = m;
+    //    int gcd = 0;
+    //    while (m > 0)
+    //    {
+    //        int temp = n;
+    //        n = m;
+    //        m = temp % m;
+    //        gcd = n;
+    //    }
+    //    answer[0] = gcd;
+    //    answer[1] = OriginN * OriginM / gcd;
+    //    return answer;
+    //}
+}
+
+// 40 3진법 뒤집기
+{
+    //int solution(int n)
+    //{
+    //    int answer = 0;
+    //    List<int> list = new List<int>();
+    //    while (n > 0)
+    //    {
+    //        int result = n % 3;
+    //        list.Add(result);
+    //        n /= 3;
+    //    }
+    //    list.Reverse();
+    //    for (int i = 0; i < list.Count; i++)
+    //    {
+    //        answer += list[i] * (int)Math.Pow(3, i);
+    //    }
+    //    return answer;
+    //}
+}
+
+// 40 다른 버전
+{
+    int solution(int n) 
     {
-        int[] answer = new int[2];
-        int OriginN = n;
-        int OriginM = m;
-        int gcd = 0;
-        while (m > 0)
+        int answer = 0;
+        while (n > 0)
         {
-            int temp = n;
-            n = m;
-            m = temp % m;
-            gcd = n;
+            answer *= 3;
+            answer += n % 3;
+            n /= 3;
         }
-        answer[0] = gcd;
-        answer[1] = OriginN * OriginM / gcd;
         return answer;
     }
 }
