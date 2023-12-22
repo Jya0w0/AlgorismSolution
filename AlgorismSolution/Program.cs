@@ -675,15 +675,48 @@ using System.Numerics;
 
 // 40 다른 버전
 {
-    int solution(int n) 
+    //int solution(int n) 
+    //{
+    //    int answer = 0;
+    //    while (n > 0)
+    //    {
+    //        answer *= 3;
+    //        answer += n % 3;
+    //        n /= 3;
+    //    }
+    //    return answer;
+    //}
+}
+
+// 41 이상한 문자 만들기
+{
+    string solution(string s)
     {
-        int answer = 0;
-        while (n > 0)
+        string answer = "";
+        string[] c = s.Split();
+        for (int i = 0; i < c.Length; i++)
         {
-            answer *= 3;
-            answer += n % 3;
-            n /= 3;
+            for (int j = 0; j < c[i].Length; j++)
+            {
+                if (j == 0)
+                {
+                    answer += Char.ToUpper(c[i][j]);
+                }
+                else if (j % 2 == 0)
+                {
+                    answer += Char.ToUpper(c[i][j]);
+                }
+                else
+                {
+                    answer += Char.ToLower(c[i][j]);
+                }
+            }
+            if (i != c.Length - 1)
+            {
+                answer += " ";
+            }
         }
+
         return answer;
     }
 }
