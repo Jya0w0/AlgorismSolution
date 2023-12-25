@@ -690,33 +690,55 @@ using System.Numerics;
 
 // 41 이상한 문자 만들기
 {
-    string solution(string s)
+    //string solution(string s)
+    //{
+    //    string answer = "";
+    //    string[] c = s.Split();
+    //    for (int i = 0; i < c.Length; i++)
+    //    {
+    //        for (int j = 0; j < c[i].Length; j++)
+    //        {
+    //            if (j == 0)
+    //            {
+    //                answer += Char.ToUpper(c[i][j]);
+    //            }
+    //            else if (j % 2 == 0)
+    //            {
+    //                answer += Char.ToUpper(c[i][j]);
+    //            }
+    //            else
+    //            {
+    //                answer += Char.ToLower(c[i][j]);
+    //            }
+    //        }
+    //        if (i != c.Length - 1)
+    //        {
+    //            answer += " ";
+    //        }
+    //    }
+
+    //    return answer;
+    //}
+}
+
+// 42 삼총사 ------ 이렇게 풀면 안됨
+{
+    int solution(int[] number)
     {
-        string answer = "";
-        string[] c = s.Split();
-        for (int i = 0; i < c.Length; i++)
+        int answer = 0;
+        for (int i = 0; i < number.Length; i++)
         {
-            for (int j = 0; j < c[i].Length; j++)
+            for (int j = i + 1; j < number.Length; j++)
             {
-                if (j == 0)
+                for (int k = j + 1; k < number.Length; k++)
                 {
-                    answer += Char.ToUpper(c[i][j]);
+                    if (number[i] + number[j] + number[k] == 0)
+                    {
+                        answer++;
+                    }
                 }
-                else if (j % 2 == 0)
-                {
-                    answer += Char.ToUpper(c[i][j]);
-                }
-                else
-                {
-                    answer += Char.ToLower(c[i][j]);
-                }
-            }
-            if (i != c.Length - 1)
-            {
-                answer += " ";
             }
         }
-
         return answer;
     }
 }
