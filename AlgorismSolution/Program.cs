@@ -742,3 +742,22 @@ using System.Numerics;
         return answer;
     }
 }
+
+// 43 크기가 작은 부분 문자열
+{
+    int solution(string t, string p)
+    {
+        int answer = 0;
+        long numP = long.Parse(p);
+
+        for (int i = 0; i <= t.Length - p.Length; i++)
+        {
+            long comp = long.Parse(t.Substring(i, p.Length));
+            if (comp <= numP)
+            {
+                answer++;
+            }
+        }
+        return answer;
+    }
+}
