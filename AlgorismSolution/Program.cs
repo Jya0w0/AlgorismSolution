@@ -723,39 +723,103 @@ using System.Numerics;
 
 // 42 삼총사 ------ 이렇게 풀면 안됨
 {
-    int solution(int[] number)
-    {
-        int answer = 0;
-        for (int i = 0; i < number.Length; i++)
-        {
-            for (int j = i + 1; j < number.Length; j++)
-            {
-                for (int k = j + 1; k < number.Length; k++)
-                {
-                    if (number[i] + number[j] + number[k] == 0)
-                    {
-                        answer++;
-                    }
-                }
-            }
-        }
-        return answer;
-    }
+    //int solution(int[] number)
+    //{
+    //    int answer = 0;
+    //    for (int i = 0; i < number.Length; i++)
+    //    {
+    //        for (int j = i + 1; j < number.Length; j++)
+    //        {
+    //            for (int k = j + 1; k < number.Length; k++)
+    //            {
+    //                if (number[i] + number[j] + number[k] == 0)
+    //                {
+    //                    answer++;
+    //                }
+    //            }
+    //        }
+    //    }
+    //    return answer;
+    //}
 }
 
 // 43 크기가 작은 부분 문자열
 {
-    int solution(string t, string p)
-    {
-        int answer = 0;
-        long numP = long.Parse(p);
+    //int solution(string t, string p)
+    //{
+    //    int answer = 0;
+    //    long numP = long.Parse(p);
 
-        for (int i = 0; i <= t.Length - p.Length; i++)
+    //    for (int i = 0; i <= t.Length - p.Length; i++)
+    //    {
+    //        long comp = long.Parse(t.Substring(i, p.Length));
+    //        if (comp <= numP)
+    //        {
+    //            answer++;
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// 44 최소직각사각형 ------ 능지이슈 다시봐
+{
+    //int solution(int[,] sizes)
+    //{
+    //    int answer = 0;
+    //    int w = 0;
+    //    int h = 0;
+    //    for (int i = 0; i < sizes.GetLength(0); i++)
+    //    {
+    //        if (sizes[i, 0] < sizes[i, 1])
+    //        {
+    //            int a = sizes[i, 0];
+    //            sizes[i, 0] = sizes[i, 1];
+    //            sizes[i, 1] = a;
+    //        }
+    //        if (w < sizes[i, 0])
+    //        {
+    //            w = sizes[i, 0];
+    //        }
+    //        if (h < sizes[i, 1])
+    //        {
+    //            h = sizes[i, 1];
+    //        }
+    //    }
+    //    return answer = w * h;
+    //}
+}
+
+// 45 시저암호
+{
+    string solution(string s, int n)
+    {
+        string answer = "";
+        char[] chars = s.ToCharArray();
+        for (int i = 0; i < chars.Length; i++)
         {
-            long comp = long.Parse(t.Substring(i, p.Length));
-            if (comp <= numP)
+            if (chars[i] != ' ')
             {
-                answer++;
+                int result = chars[i] + n;
+                if (char.IsLower(chars[i]))
+                {
+                    if (result > 122)
+                    {
+                        result -= 26;
+                    }
+                }
+                else
+                {
+                    if (result > 90)
+                    {
+                        result -= 26;
+                    }
+                }
+                answer += Convert.ToChar(result);
+            }
+            else
+            {
+                answer += ' ';
             }
         }
         return answer;
