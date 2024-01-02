@@ -792,36 +792,51 @@ using System.Numerics;
 
 // 45 시저암호
 {
-    string solution(string s, int n)
+    //string solution(string s, int n)
+    //{
+    //    string answer = "";
+    //    char[] chars = s.ToCharArray();
+    //    for (int i = 0; i < chars.Length; i++)
+    //    {
+    //        if (chars[i] != ' ')
+    //        {
+    //            int result = chars[i] + n;
+    //            if (char.IsLower(chars[i]))
+    //            {
+    //                if (result > 122)
+    //                {
+    //                    result -= 26;
+    //                }
+    //            }
+    //            else
+    //            {
+    //                if (result > 90)
+    //                {
+    //                    result -= 26;
+    //                }
+    //            }
+    //            answer += Convert.ToChar(result);
+    //        }
+    //        else
+    //        {
+    //            answer += ' ';
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// 46 숫자 문자열과 영단어
+{
+    int solution(string s)
     {
-        string answer = "";
-        char[] chars = s.ToCharArray();
-        for (int i = 0; i < chars.Length; i++)
+        int answer = 0;
+        String[] arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+        for (int i = 0; i < arr.Length; i++)
         {
-            if (chars[i] != ' ')
-            {
-                int result = chars[i] + n;
-                if (char.IsLower(chars[i]))
-                {
-                    if (result > 122)
-                    {
-                        result -= 26;
-                    }
-                }
-                else
-                {
-                    if (result > 90)
-                    {
-                        result -= 26;
-                    }
-                }
-                answer += Convert.ToChar(result);
-            }
-            else
-            {
-                answer += ' ';
-            }
+            s = s.Replace(arr[i], i.ToString());
         }
+        answer = int.Parse(s);
         return answer;
     }
 }
