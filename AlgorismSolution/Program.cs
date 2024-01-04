@@ -828,15 +828,36 @@ using System.Numerics;
 
 // 46 숫자 문자열과 영단어
 {
-    int solution(string s)
+    //int solution(string s)
+    //{
+    //    int answer = 0;
+    //    String[] arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+    //    for (int i = 0; i < arr.Length; i++)
+    //    {
+    //        s = s.Replace(arr[i], i.ToString());
+    //    }
+    //    answer = int.Parse(s);
+    //    return answer;
+    //}
+}
+
+// 문자열 내 마음대로 정렬하기
+{
+    string[] solution(string[] strings, int n)
     {
-        int answer = 0;
-        String[] arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-        for (int i = 0; i < arr.Length; i++)
+        string[] answer = new string[strings.Length];
+
+        for (int i = 0; i < strings.Length; i++)
         {
-            s = s.Replace(arr[i], i.ToString());
+            answer[i] = strings[i].Substring(n, 1) + strings[i];
         }
-        answer = int.Parse(s);
+        Array.Sort(answer);
+
+        for (int j = 0; j < strings.Length; j++)
+        {
+            answer[j] = answer[j].Substring(1);
+        }
+
         return answer;
     }
 }
