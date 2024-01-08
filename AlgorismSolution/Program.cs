@@ -843,20 +843,46 @@ using System.Numerics;
 
 // 문자열 내 마음대로 정렬하기
 {
-    string[] solution(string[] strings, int n)
+    //string[] solution(string[] strings, int n)
+    //{
+    //    string[] answer = new string[strings.Length];
+
+    //    for (int i = 0; i < strings.Length; i++)
+    //    {
+    //        answer[i] = strings[i].Substring(n, 1) + strings[i];
+    //    }
+    //    Array.Sort(answer);
+
+    //    for (int j = 0; j < strings.Length; j++)
+    //    {
+    //        answer[j] = answer[j].Substring(1);
+    //    }
+
+    //    return answer;
+    //}
+}
+
+// K번째수
+{
+    int[] solution(int[] array, int[,] commands)
     {
-        string[] answer = new string[strings.Length];
+        int row = commands.GetLength(0);
+        int[] answer = new int[row];
 
-        for (int i = 0; i < strings.Length; i++)
+        for (int n = 0; n < row; n++)
         {
-            answer[i] = strings[i].Substring(n, 1) + strings[i];
-        }
-        Array.Sort(answer);
+            int i = commands[n, 0] - 1;
+            int j = commands[n, 1] - 1;
+            int k = commands[n, 2] - 1;
+            int len = j - i + 1;
 
-        for (int j = 0; j < strings.Length; j++)
-        {
-            answer[j] = answer[j].Substring(1);
+            int[] arr = new int[len];
+            Array.Copy(array, i, arr, 0, len);
+            Array.Sort(arr);
+
+            answer[n] = arr[k];
         }
+
 
         return answer;
     }
