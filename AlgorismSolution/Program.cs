@@ -864,26 +864,47 @@ using System.Numerics;
 
 // K번째수
 {
-    int[] solution(int[] array, int[,] commands)
+    //int[] solution(int[] array, int[,] commands)
+    //{
+    //    int row = commands.GetLength(0);
+    //    int[] answer = new int[row];
+
+    //    for (int n = 0; n < row; n++)
+    //    {
+    //        int i = commands[n, 0] - 1;
+    //        int j = commands[n, 1] - 1;
+    //        int k = commands[n, 2] - 1;
+    //        int len = j - i + 1;
+
+    //        int[] arr = new int[len];
+    //        Array.Copy(array, i, arr, 0, len);
+    //        Array.Sort(arr);
+
+    //        answer[n] = arr[k];
+    //    }
+
+
+    //    return answer;
+    //}
+}
+
+// 두 개 뽑아서 더하기
+{
+    int[] solution(int[] numbers)
     {
-        int row = commands.GetLength(0);
-        int[] answer = new int[row];
-
-        for (int n = 0; n < row; n++)
+        List<int> answer = new List<int>();
+        for (int i = 0; i < numbers.Length - 1; i++)
         {
-            int i = commands[n, 0] - 1;
-            int j = commands[n, 1] - 1;
-            int k = commands[n, 2] - 1;
-            int len = j - i + 1;
-
-            int[] arr = new int[len];
-            Array.Copy(array, i, arr, 0, len);
-            Array.Sort(arr);
-
-            answer[n] = arr[k];
+            for (int j = i + 1; j < numbers.Length; j++)
+            {
+                int k = numbers[i] + numbers[j];
+                if (answer.Contains(k) == false)
+                {
+                    answer.Add(k);
+                }
+            }
         }
-
-
-        return answer;
+        answer.Sort();
+        return answer.ToArray();
     }
 }
