@@ -890,21 +890,43 @@ using System.Numerics;
 
 // 두 개 뽑아서 더하기
 {
-    int[] solution(int[] numbers)
+    //int[] solution(int[] numbers)
+    //{
+    //    List<int> answer = new List<int>();
+    //    for (int i = 0; i < numbers.Length - 1; i++)
+    //    {
+    //        for (int j = i + 1; j < numbers.Length; j++)
+    //        {
+    //            int k = numbers[i] + numbers[j];
+    //            if (answer.Contains(k) == false)
+    //            {
+    //                answer.Add(k);
+    //            }
+    //        }
+    //    }
+    //    answer.Sort();
+    //    return answer.ToArray();
+    //}
+}
+
+// 가장 가까운 같은 글자
+{
+    int[] solution(string s)
     {
-        List<int> answer = new List<int>();
-        for (int i = 0; i < numbers.Length - 1; i++)
+        int[] answer = new int[s.Length];
+        for (int i = 0; i < s.Length; i++)
         {
-            for (int j = i + 1; j < numbers.Length; j++)
+            int result = -1;
+            for (int j = i - 1; j >= 0; j--)
             {
-                int k = numbers[i] + numbers[j];
-                if (answer.Contains(k) == false)
+                if (s[i] == s[j])
                 {
-                    answer.Add(k);
+                    result = i - j;
+                    break;
                 }
             }
+            answer[i] = result;
         }
-        answer.Sort();
-        return answer.ToArray();
+        return answer;
     }
 }
