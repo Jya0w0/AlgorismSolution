@@ -911,22 +911,43 @@ using System.Numerics;
 
 // 가장 가까운 같은 글자
 {
-    int[] solution(string s)
+    //int[] solution(string s)
+    //{
+    //    int[] answer = new int[s.Length];
+    //    for (int i = 0; i < s.Length; i++)
+    //    {
+    //        int result = -1;
+    //        for (int j = i - 1; j >= 0; j--)
+    //        {
+    //            if (s[i] == s[j])
+    //            {
+    //                result = i - j;
+    //                break;
+    //            }
+    //        }
+    //        answer[i] = result;
+    //    }
+    //    return answer;
+    //}
+}
+
+// 푸드 파이트 대회
+{
+    string solution(int[] food)
     {
-        int[] answer = new int[s.Length];
-        for (int i = 0; i < s.Length; i++)
+        string answer = "";
+        for (int i = 1; i < food.Length; i++)
         {
-            int result = -1;
-            for (int j = i - 1; j >= 0; j--)
+            int num = food[i] / 2;
+            for (int j = 0; j < num; j++)
             {
-                if (s[i] == s[j])
-                {
-                    result = i - j;
-                    break;
-                }
+                answer += i.ToString();
             }
-            answer[i] = result;
         }
-        return answer;
+
+        char[] answerChar = answer.ToCharArray();
+        Array.Reverse(answerChar);
+        string reverseAnswer = new string(answerChar);
+        return answer + "0" + reverseAnswer;
     }
 }
