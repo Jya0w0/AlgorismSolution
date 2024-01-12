@@ -841,7 +841,7 @@ using System.Numerics;
     //}
 }
 
-// 문자열 내 마음대로 정렬하기
+// 47 문자열 내 마음대로 정렬하기
 {
     //string[] solution(string[] strings, int n)
     //{
@@ -862,7 +862,7 @@ using System.Numerics;
     //}
 }
 
-// K번째수
+// 48 K번째수
 {
     //int[] solution(int[] array, int[,] commands)
     //{
@@ -888,7 +888,7 @@ using System.Numerics;
     //}
 }
 
-// 두 개 뽑아서 더하기
+// 49 두 개 뽑아서 더하기
 {
     //int[] solution(int[] numbers)
     //{
@@ -909,7 +909,7 @@ using System.Numerics;
     //}
 }
 
-// 가장 가까운 같은 글자
+// 50 가장 가까운 같은 글자
 {
     //int[] solution(string s)
     //{
@@ -931,23 +931,39 @@ using System.Numerics;
     //}
 }
 
-// 푸드 파이트 대회
+// 51 푸드 파이트 대회
 {
-    string solution(int[] food)
-    {
-        string answer = "";
-        for (int i = 1; i < food.Length; i++)
-        {
-            int num = food[i] / 2;
-            for (int j = 0; j < num; j++)
-            {
-                answer += i.ToString();
-            }
-        }
+    //string solution(int[] food)
+    //{
+    //    string answer = "";
+    //    for (int i = 1; i < food.Length; i++)
+    //    {
+    //        int num = food[i] / 2;
+    //        for (int j = 0; j < num; j++)
+    //        {
+    //            answer += i.ToString();
+    //        }
+    //    }
 
-        char[] answerChar = answer.ToCharArray();
-        Array.Reverse(answerChar);
-        string reverseAnswer = new string(answerChar);
-        return answer + "0" + reverseAnswer;
+    //    char[] answerChar = answer.ToCharArray();
+    //    Array.Reverse(answerChar);
+    //    string reverseAnswer = new string(answerChar);
+    //    return answer + "0" + reverseAnswer;
+    //}
+}
+
+// 52 콜라 문제
+{
+    int solution(int a, int b, int n)
+    {
+        int answer = 0;
+        while (a <= n)
+        {
+            int result = n % a;
+            n = n / a * b;
+            answer += n;
+            n += result;
+        }
+        return answer;
     }
 }
