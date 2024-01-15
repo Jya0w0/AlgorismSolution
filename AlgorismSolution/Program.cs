@@ -954,15 +954,42 @@ using System.Numerics;
 
 // 52 콜라 문제
 {
-    int solution(int a, int b, int n)
+    //int solution(int a, int b, int n)
+    //{
+    //    int answer = 0;
+    //    while (a <= n)
+    //    {
+    //        int result = n % a;
+    //        n = n / a * b;
+    //        answer += n;
+    //        n += result;
+    //    }
+    //    return answer;
+    //}
+}
+
+// 53 명예의 전당(1)
+{
+    int[] solution(int k, int[] score)
     {
-        int answer = 0;
-        while (a <= n)
+        int[] answer = new int[score.Length];
+        List<int> list = new List<int>();
+        for (int i = 0; i < score.Length; i++)
         {
-            int result = n % a;
-            n = n / a * b;
-            answer += n;
-            n += result;
+            if (list.Count < k)
+            {
+                list.Add(score[i]);
+                answer[i] = list.Min();
+            }
+            else
+            {
+                int j = list.Min();
+                if (j < score[i])
+                {
+                    list[list.IndexOf(j)] = score[i];
+                }
+                answer[i] = list.Min();
+            }
         }
         return answer;
     }
