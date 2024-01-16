@@ -970,27 +970,49 @@ using System.Numerics;
 
 // 53 명예의 전당(1)
 {
-    int[] solution(int k, int[] score)
+    //int[] solution(int k, int[] score)
+    //{
+    //    int[] answer = new int[score.Length];
+    //    List<int> list = new List<int>();
+    //    for (int i = 0; i < score.Length; i++)
+    //    {
+    //        if (list.Count < k)
+    //        {
+    //            list.Add(score[i]);
+    //            answer[i] = list.Min();
+    //        }
+    //        else
+    //        {
+    //            int j = list.Min();
+    //            if (j < score[i])
+    //            {
+    //                list[list.IndexOf(j)] = score[i];
+    //            }
+    //            answer[i] = list.Min();
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+
+// 54 2016년
+{
+    string solution(int a, int b)
     {
-        int[] answer = new int[score.Length];
-        List<int> list = new List<int>();
-        for (int i = 0; i < score.Length; i++)
+        string answer = "";
+        string[] day = new string[] { "FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU" };
+        int[] month = new int[] { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+        int today = 0;
+        for (int i = 0; i < a - 1; i++)
         {
-            if (list.Count < k)
-            {
-                list.Add(score[i]);
-                answer[i] = list.Min();
-            }
-            else
-            {
-                int j = list.Min();
-                if (j < score[i])
-                {
-                    list[list.IndexOf(j)] = score[i];
-                }
-                answer[i] = list.Min();
-            }
+            today += month[i];
         }
+        today += b - 1;
+
+        answer = day[today % 7];
+
         return answer;
     }
 }
