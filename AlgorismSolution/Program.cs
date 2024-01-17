@@ -998,21 +998,49 @@ using System.Numerics;
 
 // 54 2016년
 {
-    string solution(int a, int b)
+    //string solution(int a, int b)
+    //{
+    //    string answer = "";
+    //    string[] day = new string[] { "FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU" };
+    //    int[] month = new int[] { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+    //    int today = 0;
+    //    for (int i = 0; i < a - 1; i++)
+    //    {
+    //        today += month[i];
+    //    }
+    //    today += b - 1;
+
+    //    answer = day[today % 7];
+
+    //    return answer;
+    //}
+}
+
+// 55 카드 뭉치
+{
+    string solution(string[] cards1, string[] cards2, string[] goal)
     {
-        string answer = "";
-        string[] day = new string[] { "FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU" };
-        int[] month = new int[] { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
-        int today = 0;
-        for (int i = 0; i < a - 1; i++)
+        string answer = "Yes";
+        int num1 = 0;
+        int num2 = 0;
+        for (int i = 0; i < goal.Length; i++)
         {
-            today += month[i];
+            if (num1 < cards1.Length && goal[i] == cards1[num1])
+            {
+                num1++;
+                continue;
+            }
+            else if (num2 < cards2.Length && goal[i] == cards2[num2])
+            {
+                num2++;
+                continue;
+            }
+            else
+            {
+                answer = "No";
+            }
         }
-        today += b - 1;
-
-        answer = day[today % 7];
-
         return answer;
     }
 }
