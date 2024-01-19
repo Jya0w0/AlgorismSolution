@@ -1019,28 +1019,73 @@ using System.Numerics;
 
 // 55 카드 뭉치
 {
-    string solution(string[] cards1, string[] cards2, string[] goal)
+    //string solution(string[] cards1, string[] cards2, string[] goal)
+    //{
+    //    string answer = "Yes";
+    //    int num1 = 0;
+    //    int num2 = 0;
+    //    for (int i = 0; i < goal.Length; i++)
+    //    {
+    //        if (num1 < cards1.Length && goal[i] == cards1[num1])
+    //        {
+    //            num1++;
+    //            continue;
+    //        }
+    //        else if (num2 < cards2.Length && goal[i] == cards2[num2])
+    //        {
+    //            num2++;
+    //            continue;
+    //        }
+    //        else
+    //        {
+    //            answer = "No";
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// 56 과일 장수
+{
+    //int solution(int k, int m, int[] score)
+    //{
+    //    int answer = 0;
+    //    int num = m - 1;
+    //    Array.Sort(score);
+    //    Array.Reverse(score);
+    //    for (int i = 0; i < score.Length / m; i++)
+    //    {
+    //        answer += score[num] * m;
+    //        num += m;
+    //    }
+    //    return answer;
+    //}
+}
+
+// 57 모의고사완전탐색
+{
+    int[] solution(int[] answers)
     {
-        string answer = "Yes";
-        int num1 = 0;
-        int num2 = 0;
-        for (int i = 0; i < goal.Length; i++)
+        List<int> answer = new List<int>();
+        int[] s1 = { 1, 2, 3, 4, 5 };
+        int[] s2 = { 2, 1, 2, 3, 2, 4, 2, 5 };
+        int[] s3 = { 3, 3, 1, 1, 2, 2, 4, 4, 5, 5 };
+        int[] score = { 0, 0, 0 };
+
+        for (int i = 0; i < answers.Length; i++)
         {
-            if (num1 < cards1.Length && goal[i] == cards1[num1])
-            {
-                num1++;
-                continue;
-            }
-            else if (num2 < cards2.Length && goal[i] == cards2[num2])
-            {
-                num2++;
-                continue;
-            }
-            else
-            {
-                answer = "No";
-            }
+            if (s1[i % s1.Length] == answers[i])
+                score[0]++;
+            if (s2[i % s2.Length] == answers[i])
+                score[1]++;
+            if (s3[i % s3.Length] == answers[i])
+                score[2]++;
         }
-        return answer;
+
+        if (score[0] == score.Max()) answer.Add(1);
+        if (score[1] == score.Max()) answer.Add(2);
+        if (score[2] == score.Max()) answer.Add(3);
+
+        return answer.ToArray();
     }
 }
