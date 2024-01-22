@@ -1064,28 +1064,59 @@ using System.Numerics;
 
 // 57 모의고사완전탐색
 {
-    int[] solution(int[] answers)
+    //int[] solution(int[] answers)
+    //{
+    //    List<int> answer = new List<int>();
+    //    int[] s1 = { 1, 2, 3, 4, 5 };
+    //    int[] s2 = { 2, 1, 2, 3, 2, 4, 2, 5 };
+    //    int[] s3 = { 3, 3, 1, 1, 2, 2, 4, 4, 5, 5 };
+    //    int[] score = { 0, 0, 0 };
+
+    //    for (int i = 0; i < answers.Length; i++)
+    //    {
+    //        if (s1[i % s1.Length] == answers[i])
+    //            score[0]++;
+    //        if (s2[i % s2.Length] == answers[i])
+    //            score[1]++;
+    //        if (s3[i % s3.Length] == answers[i])
+    //            score[2]++;
+    //    }
+
+    //    if (score[0] == score.Max()) answer.Add(1);
+    //    if (score[1] == score.Max()) answer.Add(2);
+    //    if (score[2] == score.Max()) answer.Add(3);
+
+    //    return answer.ToArray();
+    //}
+}
+
+// 58 소수 만들기
+{
+    bool isPrime(int n)
     {
-        List<int> answer = new List<int>();
-        int[] s1 = { 1, 2, 3, 4, 5 };
-        int[] s2 = { 2, 1, 2, 3, 2, 4, 2, 5 };
-        int[] s3 = { 3, 3, 1, 1, 2, 2, 4, 4, 5, 5 };
-        int[] score = { 0, 0, 0 };
-
-        for (int i = 0; i < answers.Length; i++)
+        int rn = (int)Math.Sqrt(n);
+        for (int i = 2; i <= rn; i++)
         {
-            if (s1[i % s1.Length] == answers[i])
-                score[0]++;
-            if (s2[i % s2.Length] == answers[i])
-                score[1]++;
-            if (s3[i % s3.Length] == answers[i])
-                score[2]++;
+            if (n % i == 0)
+                return false;
         }
+        return true;
+    }
 
-        if (score[0] == score.Max()) answer.Add(1);
-        if (score[1] == score.Max()) answer.Add(2);
-        if (score[2] == score.Max()) answer.Add(3);
+    int solution(int[] nums)
+    {
+        int answer = 0;
 
-        return answer.ToArray();
+        for (int i = 0; i < nums.Length - 2; i++)
+        {
+            for (int j = i + 1; j < nums.Length - 1; j++)
+            {
+                for (int k = j + 1; k < nums.Length; k++)
+                {
+                    if (isPrime(nums[i] + nums[j] + nums[k])) answer++;
+                }
+            }
+        }
+        return answer;
     }
 }
