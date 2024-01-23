@@ -1092,31 +1092,81 @@ using System.Numerics;
 
 // 58 소수 만들기
 {
-    bool isPrime(int n)
-    {
-        int rn = (int)Math.Sqrt(n);
-        for (int i = 2; i <= rn; i++)
-        {
-            if (n % i == 0)
-                return false;
-        }
-        return true;
-    }
+    //bool isPrime(int n)
+    //{
+    //    int rn = (int)Math.Sqrt(n);
+    //    for (int i = 2; i <= rn; i++)
+    //    {
+    //        if (n % i == 0)
+    //            return false;
+    //    }
+    //    return true;
+    //}
 
-    int solution(int[] nums)
+    //int solution(int[] nums)
+    //{
+    //    int answer = 0;
+
+    //    for (int i = 0; i < nums.Length - 2; i++)
+    //    {
+    //        for (int j = i + 1; j < nums.Length - 1; j++)
+    //        {
+    //            for (int k = j + 1; k < nums.Length; k++)
+    //            {
+    //                if (isPrime(nums[i] + nums[j] + nums[k])) answer++;
+    //            }
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// 59 덧칠하기
+{
+    //int solution(int n, int m, int[] section)
+    //{
+    //    int answer = 0;
+    //    int num = 0;
+
+    //    for (int i = 0; i < section.Length; i++)
+    //    {
+    //        if (section[i] > num)
+    //        {
+    //            num = (section[i] + m) - 1;
+    //            answer++;
+    //        }
+    //    }
+
+    //    return answer;
+    //}
+}
+
+// 60 기사단원의 무기
+{
+    int solution(int number, int limit, int power)
     {
         int answer = 0;
 
-        for (int i = 0; i < nums.Length - 2; i++)
+        for (int i = 1; i <= number; i++)
         {
-            for (int j = i + 1; j < nums.Length - 1; j++)
+            int count = 0;
+            for (int j = 1; j <= Math.Sqrt(i); j++)
             {
-                for (int k = j + 1; k < nums.Length; k++)
-                {
-                    if (isPrime(nums[i] + nums[j] + nums[k])) answer++;
+                if (j * j == i) {
+                    count += 1;
+                }
+                else if (i % j == 0) {
+                    count += 2;
+                }
+
+                if (count > limit) {
+                    count = power;
+                    break;
                 }
             }
+            answer += count;
         }
+
         return answer;
     }
 }
