@@ -1143,29 +1143,60 @@ using System.Numerics;
 
 // 60 기사단원의 무기
 {
-    int solution(int number, int limit, int power)
+    //int solution(int number, int limit, int power)
+    //{
+    //    int answer = 0;
+
+    //    for (int i = 1; i <= number; i++)
+    //    {
+    //        int count = 0;
+    //        for (int j = 1; j <= Math.Sqrt(i); j++)
+    //        {
+    //            if (j * j == i) {
+    //                count += 1;
+    //            }
+    //            else if (i % j == 0) {
+    //                count += 2;
+    //            }
+
+    //            if (count > limit) {
+    //                count = power;
+    //                break;
+    //            }
+    //        }
+    //        answer += count;
+    //    }
+
+    //    return answer;
+    //}
+}
+
+// 61 로또의 최고 순위와 최저 순위
+{
+    int[] solution(int[] lottos, int[] win_nums)
     {
-        int answer = 0;
+        int[] answer = new int[2];
+        int[] rank = new int[] { 6, 6, 5, 4, 3, 2, 1 };
+        int count = 0;
+        int match = 0;
 
-        for (int i = 1; i <= number; i++)
+        for (int i = 0; i < lottos.Length; i++)
         {
-            int count = 0;
-            for (int j = 1; j <= Math.Sqrt(i); j++)
+            if (lottos[i] == 0)
             {
-                if (j * j == i) {
-                    count += 1;
-                }
-                else if (i % j == 0) {
-                    count += 2;
-                }
-
-                if (count > limit) {
-                    count = power;
-                    break;
+                count++;
+            }
+            else
+            {
+                for (int j = 0; j < win_nums.Length; j++)
+                {
+                    if (lottos[i] == win_nums[j]) match++;
                 }
             }
-            answer += count;
         }
+
+        answer[0] = rank[count + match];
+        answer[1] = rank[match];
 
         return answer;
     }
