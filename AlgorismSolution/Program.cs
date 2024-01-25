@@ -1173,31 +1173,53 @@ using System.Numerics;
 
 // 61 로또의 최고 순위와 최저 순위
 {
-    int[] solution(int[] lottos, int[] win_nums)
-    {
-        int[] answer = new int[2];
-        int[] rank = new int[] { 6, 6, 5, 4, 3, 2, 1 };
-        int count = 0;
-        int match = 0;
+    //int[] solution(int[] lottos, int[] win_nums)
+    //{
+    //    int[] answer = new int[2];
+    //    int[] rank = new int[] { 6, 6, 5, 4, 3, 2, 1 };
+    //    int count = 0;
+    //    int match = 0;
 
-        for (int i = 0; i < lottos.Length; i++)
+    //    for (int i = 0; i < lottos.Length; i++)
+    //    {
+    //        if (lottos[i] == 0)
+    //        {
+    //            count++;
+    //        }
+    //        else
+    //        {
+    //            for (int j = 0; j < win_nums.Length; j++)
+    //            {
+    //                if (lottos[i] == win_nums[j]) match++;
+    //            }
+    //        }
+    //    }
+
+    //    answer[0] = rank[count + match];
+    //    answer[1] = rank[match];
+
+    //    return answer;
+    //}
+}
+
+// 62 옹알이
+{
+    int solution(string[] babbling)
+    {
+        int answer = 0;
+        string[] words = new string[] { "aya", "ye", "woo", "ma" };
+
+        for (int i = 0; i < babbling.Length; i++)
         {
-            if (lottos[i] == 0)
+            for(int j = 0; j < words.Length; j++)
             {
-                count++;
+                if (!babbling[i].Contains(words[j] + words[j])) 
+                    babbling[i] = babbling[i].Replace(words[j], " ");
             }
-            else
-            {
-                for (int j = 0; j < win_nums.Length; j++)
-                {
-                    if (lottos[i] == win_nums[j]) match++;
-                }
-            }
+            babbling[i] = babbling[i].Trim();
+            if (babbling[i] == " ") answer++;
         }
 
-        answer[0] = rank[count + match];
-        answer[1] = rank[match];
-
-        return answer;
+            return answer;
     }
 }
