@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Numerics;
+using System.Text;
 // Solution1 두 수의 차
 {
     //int solution(int num1, int num2)
@@ -1204,22 +1205,134 @@ using System.Numerics;
 
 // 62 옹알이
 {
-    int solution(string[] babbling)
+    //int solution(string[] babbling)
+    //{
+    //    int answer = 0;
+    //    string[] words = new string[] { "aya", "ye", "woo", "ma" };
+
+    //    for (int i = 0; i < babbling.Length; i++)
+    //    {
+    //        for(int j = 0; j < words.Length; j++)
+    //        {
+    //            if (!babbling[i].Contains(words[j] + words[j])) 
+    //                babbling[i] = babbling[i].Replace(words[j], " ");
+    //        }
+    //        babbling[i] = babbling[i].Trim();
+    //        if (babbling[i] == " ") answer++;
+    //    }
+
+    //        return answer;
+    //}
+}
+
+// 63 숫자 짝꿍
+{
+    //string solution(string X, string Y)
+    //{
+    //    int[] countX = new int[10];
+    //    int[] countY = new int[10];
+
+    //    foreach (char c in X) countX[c - '0']++;
+    //    foreach (char c in Y) countY[c - '0']++;
+
+    //    StringBuilder answer = new StringBuilder();
+    //    for (int i = 9; i >= 0; i--)
+    //    {
+    //        int minCount = Math.Min(countX[i], countY[i]);
+    //        for (int j = 0; j < minCount; j++) answer.Append(i);
+    //    }
+    //    if (answer.Length == 0)
+    //    {
+    //        return "-1";
+    //    }
+    //    else if (answer[0] == '0')
+    //    {
+    //        return "0";
+    //    }
+    //    else
+    //    {
+    //        return answer.ToString();
+    //    }
+    //}
+}
+
+// 다른 방법
+{
+    //string solution(string X, string Y)
+    //{
+    //    string answer = "";
+    //    List<char> countX = X.ToList();
+    //    List<char> countY = Y.ToList();
+    //    List<char> answerList = new List<char>();
+    //    int idxX = 0;
+    //    int idxY = 0;
+
+    //    countX.Sort();
+    //    countY.Sort();
+
+    //    while (idxX < countX.Count && idxY < countY.Count)
+    //    {
+    //        if (countX[idxX] < countY[idxY])
+    //        {
+    //            idxX++;
+    //        }
+    //        else if (countX[idxX] > countY[idxY])
+    //        {
+    //            idxY++;
+    //        }
+    //        else
+    //        {
+    //            answerList.Add(countX[idxX]);
+    //            idxX++;
+    //            idxY++;
+    //        }
+    //    }
+    //    if (answerList.Count == 0)
+    //    {
+    //        answer = "-1";
+    //    }
+    //    else
+    //    {
+    //        answerList.Reverse();
+    //        answer = answerList[0] == '0' ? "0" : new string(answerList.ToArray());
+    //    }
+    //    return answer;
+    //}
+}
+
+// 64 체육복
+{
+    int solution(int n, int[] lost, int[] reserve)
     {
         int answer = 0;
-        string[] words = new string[] { "aya", "ye", "woo", "ma" };
 
-        for (int i = 0; i < babbling.Length; i++)
+        for (int i = 1; i <= n; i++)
         {
-            for(int j = 0; j < words.Length; j++)
+            if (lost.Contains(i))
             {
-                if (!babbling[i].Contains(words[j] + words[j])) 
-                    babbling[i] = babbling[i].Replace(words[j], " ");
+                if (reserve.Contains(i))
+                {
+                    reserve = reserve.Where(x => x != i).ToArray();
+                    answer += 1;
+                }
+                else if (reserve.Contains(i - 1) && !lost.Contains(i - 1))
+                {
+                    reserve = reserve.Where(x => x != i - 1).ToArray();
+                    answer += 1;
+                }
+
+                else if (reserve.Contains(i + 1) && !lost.Contains(i + 1))
+                {
+                    reserve = reserve.Where(x => x != i + 1).ToArray();
+                    answer += 1;
+                }
             }
-            babbling[i] = babbling[i].Trim();
-            if (babbling[i] == " ") answer++;
+            else
+            {
+                answer += 1;
+            }
         }
 
-            return answer;
+        return answer;
     }
 }
