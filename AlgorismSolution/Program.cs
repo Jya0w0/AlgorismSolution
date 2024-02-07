@@ -1302,37 +1302,69 @@ using System.Text;
 
 // 64 체육복
 {
-    int solution(int n, int[] lost, int[] reserve)
+    //int solution(int n, int[] lost, int[] reserve)
+    //{
+    //    int answer = 0;
+
+    //    for (int i = 1; i <= n; i++)
+    //    {
+    //        if (lost.Contains(i))
+    //        {
+    //            if (reserve.Contains(i))
+    //            {
+    //                reserve = reserve.Where(x => x != i).ToArray();
+    //                answer += 1;
+    //            }
+    //            else if (reserve.Contains(i - 1) && !lost.Contains(i - 1))
+    //            {
+    //                reserve = reserve.Where(x => x != i - 1).ToArray();
+    //                answer += 1;
+    //            }
+
+    //            else if (reserve.Contains(i + 1) && !lost.Contains(i + 1))
+    //            {
+    //                reserve = reserve.Where(x => x != i + 1).ToArray();
+    //                answer += 1;
+    //            }
+    //        }
+    //        else
+    //        {
+    //            answer += 1;
+    //        }
+    //    }
+
+    //    return answer;
+    //}
+}
+
+// 문자열 나누기
+{
+    int solution(string s)
     {
         int answer = 0;
-
-        for (int i = 1; i <= n; i++)
+        char x = ' ';
+        int count1 = 0;
+        int count2 = 0;
+        for (int i = 0; i < s.Length; i++)
         {
-            if (lost.Contains(i))
-            {
-                if (reserve.Contains(i))
-                {
-                    reserve = reserve.Where(x => x != i).ToArray();
-                    answer += 1;
-                }
-                else if (reserve.Contains(i - 1) && !lost.Contains(i - 1))
-                {
-                    reserve = reserve.Where(x => x != i - 1).ToArray();
-                    answer += 1;
-                }
+            if (count1 == 0 && count2 == 0) x = s[i];
 
-                else if (reserve.Contains(i + 1) && !lost.Contains(i + 1))
-                {
-                    reserve = reserve.Where(x => x != i + 1).ToArray();
-                    answer += 1;
-                }
+            if (x == s[i])
+            {
+                count1++;
             }
             else
             {
-                answer += 1;
+                count2++;
+            }
+
+            if (count1 == count2 || i == s.Length - 1)
+            {
+                answer++;
+                count1 = 0;
+                count2 = 0;
             }
         }
-
         return answer;
     }
 }
