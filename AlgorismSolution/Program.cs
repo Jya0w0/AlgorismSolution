@@ -1337,34 +1337,56 @@ using System.Text;
     //}
 }
 
-// 문자열 나누기
+// 65 문자열 나누기
 {
-    int solution(string s)
+    //int solution(string s)
+    //{
+    //    int answer = 0;
+    //    char x = ' ';
+    //    int count1 = 0;
+    //    int count2 = 0;
+    //    for (int i = 0; i < s.Length; i++)
+    //    {
+    //        if (count1 == 0 && count2 == 0) x = s[i];
+
+    //        if (x == s[i])
+    //        {
+    //            count1++;
+    //        }
+    //        else
+    //        {
+    //            count2++;
+    //        }
+
+    //        if (count1 == count2 || i == s.Length - 1)
+    //        {
+    //            answer++;
+    //            count1 = 0;
+    //            count2 = 0;
+    //        }
+    //    }
+    //    return answer;
+    //}
+}
+
+// 66 대충 만든 자판
+{
+
+}
+
+// 최댓값과 최솟값
+{
+    string solution(string s)
     {
-        int answer = 0;
-        char x = ' ';
-        int count1 = 0;
-        int count2 = 0;
-        for (int i = 0; i < s.Length; i++)
+        string answer = "";
+        string[] ss = s.Split();
+        int[] nums = new int[ss.Length];
+
+        for (int i = 0; i < ss.Length; i++)
         {
-            if (count1 == 0 && count2 == 0) x = s[i];
-
-            if (x == s[i])
-            {
-                count1++;
-            }
-            else
-            {
-                count2++;
-            }
-
-            if (count1 == count2 || i == s.Length - 1)
-            {
-                answer++;
-                count1 = 0;
-                count2 = 0;
-            }
+            nums[i] = int.Parse(ss[i]);
         }
+        answer = $"{nums.Min()} {nums.Max()}";
         return answer;
     }
 }
